@@ -1,8 +1,6 @@
 /* Global Styling */
 * {
     box-sizing: border-box;
-    margin: 0;
-    padding: 0;
 }
 
 /* Body stylin */
@@ -83,10 +81,11 @@ a:hover {
     display: flex;
     flex-wrap: wrap;
     font-size: 35px;
-    color: rgb(83, 82, 82);
-	margin-left: 12%;
+    color: rgb(0, 34, 172);
+	margin-left: 1%;
 	width: 5%;
 	text-align: right;
+	padding-left: 8%;
 }
 
 /* "About Me" and "Contact Me" Section Contents' Styling */
@@ -95,8 +94,8 @@ a:hover {
     flex-wrap: wrap;
     align-items: center;
     width: 80%;
-	border-left: rgb(190, 146, 118) solid 4px;
-	margin-bottom: 1%;
+	border-left: rgb(0, 34, 172) solid 4px;
+	margin: 1% 0% 1% 0%;
 	padding-left: 2%;
 }
 
@@ -104,14 +103,39 @@ a:hover {
 	padding: 0.75% 0 0.5% 0;
 }
 
-.titles li {
-	
-	flex 1 1 30%
-	display: inline;
+.flex-row ul {
+	display: inline-flex;
 	justify-content: space-between;
-	margin-bottom: 1%;
+	margin-bottom: 5%;
 	padding-left: 2%;
+	width: 200%;
+	text-align: center;
+	padding-right: 3%;
+}
 
+.card1 {
+	width: 100%;
+	margin-right: 1%;
+}
+
+.card1 img {
+	width: 100%;
+	border: solid rgb(190, 146, 118) 5px;
+}
+  
+
+.card2 {
+	width: 100%;
+}
+
+.card2 img {
+	width: 49.3%;
+	border: solid rgb(190, 146, 118) 5px;							
+}
+
+footer {
+	text-align: center;
+	padding: 3%;
 }
 
 /* MEDIA QUERY FOR SMALLER DESKTOP SCREENS AND SMALLER */
