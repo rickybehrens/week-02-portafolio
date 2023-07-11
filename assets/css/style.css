@@ -1,3 +1,10 @@
+/* Root Styling */
+:root{
+	--light:rgb(190, 146, 118);
+	--dark:rgb(101, 100, 100);
+	--darker:rgb(83, 82, 82);
+	--green:rgb(135, 140, 130);
+}
 /* Global Styling */
 * {
     box-sizing: border-box;
@@ -14,7 +21,7 @@ body {
 
 header {
 	padding: 1% 0 1% 0;
-	background-color: rgb(101, 100, 100);
+	background-color: var(--dark);
 	display: flex;
 	height: 125px;
 	font-size: 40px;
@@ -25,9 +32,10 @@ header {
 header h1 {
 	padding: 1%;
 	font-size: 115%;
-	background-color: rgb(190, 146, 118);
-	color: rgb(83, 82, 82);
-	width: 35%;
+	background-color: var(--light);
+	color: var(--darker);
+	width: 400px;
+	height: 100px;
 	text-align: right;
 }
 
@@ -36,7 +44,7 @@ nav ul {
 	position: absolute;
 	right: 0%;
 	top: 8%;
-	width: 35%;
+	width: 45%;
 	display: flex;
 	flex-wrap: wrap;
 	font-size: 60%;
@@ -44,7 +52,7 @@ nav ul {
 }
 
 a {
-	color: rgb(190, 146, 118);
+	color: var(--light);
 	font-style: normal;
 	text-decoration: none;
 }
@@ -57,12 +65,12 @@ a:hover {
 
 .motto {
 	position: absolute;
-	right: 0%;
-	top: 33%;
+	right: 0px;
+	top: 220px;
 	padding: 1%;
 	font-size: 200%;
-	background-color: rgb(190, 146, 118);
-	color: rgb(83, 82, 82);
+	background-color: var(--light);
+	color: var(--darker);
 	width: 30%;
 	text-align: right;
 	font-weight: bolder;
@@ -73,19 +81,18 @@ a:hover {
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
-    align-items: center;
 }
 
-/* "About Me" and "Contact Me" Sections Titles' Styling */
+/* "About Me", "Work" and "Contact Me" Sections Titles' Styling */
 .titles h2 {
     display: flex;
     flex-wrap: wrap;
-    font-size: 35px;
-    color: rgb(0, 34, 172);
-	margin-left: 1%;
-	width: 5%;
+    font-size: 40px;
+	font-weight: bolder;
+	color: var(--green);
+	width: 10%;
 	text-align: right;
-	padding-left: 8%;
+	padding-left: 80px;
 }
 
 /* "About Me" and "Contact Me" Section Contents' Styling */
@@ -94,7 +101,7 @@ a:hover {
     flex-wrap: wrap;
     align-items: center;
     width: 80%;
-	border-left: rgb(0, 34, 172) solid 4px;
+	border-left: var(--green) solid 4px;
 	margin: 1% 0% 1% 0%;
 	padding-left: 2%;
 }
@@ -120,9 +127,13 @@ a:hover {
 
 .card1 img {
 	width: 100%;
-	border: solid rgb(190, 146, 118) 5px;
+	border: solid var(--light) 5px;
+	margin-bottom: 5px;
 }
-  
+
+.card1 img:hover {
+	box-shadow: 0px 0px 8px var(--light);
+}
 
 .card2 {
 	width: 100%;
@@ -130,13 +141,34 @@ a:hover {
 
 .card2 img {
 	width: 49.3%;
-	border: solid rgb(190, 146, 118) 5px;							
+	height: 366px;
+	border: solid var(--light) 5px;					
+}
+
+.card2 img:hover {
+	box-shadow: 0px 0px 8px var(--light);
+}
+
+.image-cover {
+	position: relative;
+	overflow: hidden;
+}
+
+.image-cover > img {
+	object-fit: cover;
+	object-position: center;
+}
+
+.image-cover:hover {
+	box-shadow: 0px 0px 8px var(--light);
 }
 
 footer {
 	text-align: center;
 	padding: 3%;
 }
+
+
 
 /* MEDIA QUERY FOR SMALLER DESKTOP SCREENS AND SMALLER */
 @media screen and (max-width: 980px) {
@@ -172,20 +204,29 @@ footer {
 }
   
   /* MEDIA QUERY FOR TABLETS AND SMALLER */
-@media screen and (max-width: 768px) {
-    section {
-      padding: 30px 15px;
-    }
-}
+/* using a mobile-first approach, use `min-width` values going from narrow -> wide for a responsive design */
+@media screen and (min-width: 768px) {
+	/* on tablets, set columns to only be 50% of the width and not grow */
+	.card-column {
+	  flex: 0 0 50%;
+	  max-width: 50%;
+	}
+	
+	/* select the last child to grow to full width if it has space to grow */
+	.card-column:last-child {
+	  flex-grow: 1;
+	}
+  }
   
-/* MEDIA QUERY FOR MOBILE PHONES AND SMALLER */
-@media screen and (max-width: 575px) {
-    .section-title {
-      width: 95%;
-    }
+  /* media query for larger screens */
+  @media screen and (min-width: 992px) {
+	header {
+	  width: 100%;
+	}
   
-    .section p {
-      width: 100%;
-    }
-}
+	.card-column {
+	  flex: 0 0 33.333%;
+	  max-width: 33.333%;
+	}
+  }
   
