@@ -15,8 +15,6 @@ body {
 	font-family: Helvetica, Arial, sans-serif;
 	font-size: 16px;
 	line-height: 1.5;
-	display: flex;
-	flex-direction: column;
 }
 
 header {
@@ -26,7 +24,6 @@ header {
 	height: 125px;
 	font-size: 40px;
 	font-weight: bolder;
-	display: flex;
 }
 
 header h1 {
@@ -34,33 +31,35 @@ header h1 {
 	font-size: 115%;
 	background-color: var(--light);
 	color: var(--darker);
-	width: 400px;
+	width: 500px;
 	height: 100px;
 	text-align: right;
 }
 
-nav ul {
-	
-	position: absolute;
-	right: 0%;
-	top: 8%;
-	width: 45%;
+nav {
+	width: 80%;
 	display: flex;
-	flex-wrap: wrap;
-	font-size: 60%;
+	justify-content: end;
+	align-items: center;
+}
+
+nav ul {
+	display: inline-flex;
 	justify-content: space-between;
+	font-size: 60%;
+	padding-right: 2%;
+	width: 80%;
 }
 
 a {
 	color: var(--light);
-	font-style: normal;
-	text-decoration: none;
+	text-decoration: underline 5px var(--light);
+	justify-content: end;
 }
 
 a:hover {
 	color: orange;
-	font-style: normal;
-	text-decoration: none;
+	text-decoration: underline 5px orange;
 }
 
 .motto {
@@ -79,20 +78,19 @@ a:hover {
 /* Start of Main Sections Content Styling */
 .titles {
     display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between;
+    padding: 0% 0% 0% 5%;
 }
 
 /* "About Me", "Work" and "Contact Me" Sections Titles' Styling */
 .titles h2 {
     display: flex;
-    flex-wrap: wrap;
     font-size: 40px;
 	font-weight: bolder;
 	color: var(--green);
 	width: 10%;
 	text-align: right;
-	padding-left: 80px;
+	justify-content: end;
+	margin: 2% 5% 0% 0%;
 }
 
 /* "About Me" and "Contact Me" Section Contents' Styling */
@@ -103,7 +101,7 @@ a:hover {
     width: 80%;
 	border-left: var(--green) solid 4px;
 	margin: 1% 0% 1% 0%;
-	padding-left: 2%;
+	padding: 2% 0% 2% 2%;
 }
 
 .flex-row p {
@@ -135,18 +133,63 @@ a:hover {
 	box-shadow: 0px 0px 8px var(--light);
 }
 
+.card1 aside h3 {
+	display: flex;
+	background-color: var(--light);
+	color: var(--darker);
+	font-weight: bolder;
+	font-size: 130%;
+	position: relative;
+	top: 600px;
+	width: 170px;
+	height: 60px;
+	padding-left: 1%;
+}
+
+.card1 aside p {
+	display: flex;
+	color: var(--darker);
+	font-size: 80%;
+	position: relative;
+	top: 565px;
+	padding-left: 1%;
+}
+
 .card2 {
 	width: 100%;
 }
 
 .card2 img {
-	width: 49.3%;
-	height: 366px;
+	display: flex;
+	width: 50%;
+	max-height: 366px;
 	border: solid var(--light) 5px;					
 }
 
 .card2 img:hover {
 	box-shadow: 0px 0px 8px var(--light);
+}
+
+.card2 aside h3 {
+	display: flex;
+	background-color: var(--light);
+	color: var(--darker);
+	font-weight: bolder;
+	font-size: 130%;
+	position: relative;
+	top: 350px;
+	width: 170px;
+	height: 60px;
+	padding-left: 1%;
+}
+
+.card2 aside p {
+	display: flex;
+	color: var(--darker);
+	font-size: 80%;
+	position: relative;
+	top: 315px;
+	padding-left: 1%;
 }
 
 .image-cover {
@@ -168,32 +211,54 @@ footer {
 	padding: 3%;
 }
 
+footer ul {
+	justify-content: space-between;
+	text-align: center;
+	display: flex;
+	padding: 2% 4% 0% 4%;
+}
+
+footer li {
+	display: inline;
+	font-size: 80%;
+	color: var(--dark);
+}
 
 
+
+
+/* media query for larger screens */
+@media screen and (min-width: 992px) {
+	.header {
+		width: 100%;
+	}
+
+	.nav ul {
+		display: block;
+	}
+	
+	.card2 {
+		width: 100%;
+	}
+	
+	/*body {
+		background: #8ac4ff;
+	  }*/
+}
 
 /* using a mobile-first approach, use `min-width` values going from narrow -> wide for a responsive design */
 @media screen and (min-width: 768px) {
 	/* on tablets, set columns to only be 50% of the width and not grow */
-	.card-column {
-	  flex: 0 0 50%;
-	  max-width: 50%;
+	.card2 {
+	  width: 100%;
 	}
 	
 	/* select the last child to grow to full width if it has space to grow */
-	.card-column:last-child {
-	  flex-grow: 1;
+	.nav ul {
+		display: block;
 	}
-  }
-  
-  /* media query for larger screens */
-  @media screen and (min-width: 992px) {
-	header {
-	  width: 100%;
-	}
-  
-	.card2 {
-	  flex: 0 0 100%;
-	  max-width: 100%;
-	}
-  }
-  
+  	
+	/*body {
+		background-color: pink;
+	}*/
+}
