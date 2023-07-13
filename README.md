@@ -1,14 +1,14 @@
 # week-02-portafolio
 
-**Author**: Ricardo Behren
-**Date Last Updated**: July 13th, 2023
+**Author**: Ricardo Behrens<br>
+**Date Last Updated**: July 13th, 2023<br>
 **Description**: My website development portfolio.
 
-The idea of this challenge was to start creating a portafolio to showcase the core skills I've recently learned: flexbox, media queries, and CSS variables.
+The idea of this challenge was to start creating a portafolio to showcase the core skills I've recently learned: flexbox, media queries, and CSS variables.<br>
 
-I imagine, over time, we will update our projects to this website and improve it every single update with all the new things we learn on the way.
+I imagine, over time, we will update our projects to this website and improve it every single update with all the new things we learn on the way.<br>
 
-As of now, the site is divided is divided in three (03) sections, "About Me", "Work", and "Contact Me". The nav menu on top will direct you to each section and in the "Contact Me" section, there are a few links on how to contact me personally.
+As of now, the site is divided is divided in three (03) sections, "About Me", "Work", and "Contact Me". The nav menu on top will direct you to each section and in the "Contact Me" section, there are a few links on how to contact me personally.<br>
 
 Here is a list of the funtions I've added to the site:
 
@@ -18,9 +18,10 @@ Here is a list of the funtions I've added to the site:
 <li>The projects presented in the My Work section include nothis as of now, since I have techinacally not completed any projects.
 <li>The non-placholder applications will take the user to the deployed application on my GitHub when clicked on.
 <li>The page was styled for multiple screen sizes, including tablets and mobile phones.
-<li>I also included some on hover effects for the various links and the projects on the page.
+<li>I also included some on hover effects for the various links and the projects on the page.<br>
+<br>
+<br>
+<br>
 
-
-
-##Link to deployed application:##
+**Link to deployed application:**<br>
 https://rickybehrens.github.io/week-02-portafolio/
