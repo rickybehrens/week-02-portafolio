@@ -122,10 +122,12 @@ a:hover {
 	padding: 2% 0% 2% 2%;
 }
 
+/* Some padding to make the <p> better looking */
 .flex-row p {
 	padding: 0.75% 0 0.5% 0;
 }
 
+/* Styling of the list in "Contact Me" */
 .flex-row ul {
 	display: inline-flex;
 	justify-content: space-between;
@@ -136,15 +138,11 @@ a:hover {
 	padding-right: 3%;
 }
 
-.card1 {
-	flex: 1 1 1;
-	margin-right: 1%;
-}
-
+/* Main project's image (larger than the rest) format */
 .card1 img {
 	border: solid var(--light) 5px;
 	margin-bottom: 5px;
-	max-width: 105%;
+	max-width: 101%;
 	-webkit-transform: scale(1);
 	transform: scale(1);
 	-webkit-transition: .1s ease-in-out;
@@ -152,6 +150,7 @@ a:hover {
 	opacity: 0.8;
 }
 
+/* Main project's image hover effect */
 .card1 img:hover {
 	box-shadow: 0px 0px 15px var(--light);
 	-webkit-transform: scale(1.005);
@@ -160,38 +159,14 @@ a:hover {
 	cursor: grab;
 }
 
-.card1 aside h3 {
-	display: flex;
-	background-color: var(--light);
-	color: var(--darker);
-	font-weight: bolder;
-	font-size: 130%;
-	position: relative;
-	top: 600px;
-	width: 170px;
-	height: 60px;
-	padding-left: 1%;
-	z-index: 1;
-}
-
-.card1 aside p {
-	display: flex;
-	color: var(--darker);
-	font-size: 80%;
-	position: relative;
-	top: 565px;
-	padding-left: 1%;
-	z-index: 1;
-}
-
+/* The other project's grid format */
 .card2 {
-
 	display: flex;
     flex-wrap: wrap;
-	/* flex: 1 1 1;
-	margin-right: 1%; */
+	flex: 1 1 1;
 }
 
+/* Other project's images format */
 .card2 img {
 	max-height: 366px;
 	border: solid var(--light) 5px;
@@ -204,6 +179,7 @@ a:hover {
 	display: block;
 }
 
+/* Other project's image hover effect */
 .card2 img:hover {
 	box-shadow: 0px 0px 15px var(--light);
 	-webkit-transform: scale(1.005);
@@ -212,44 +188,40 @@ a:hover {
 	cursor: grab;
 }
 
-.card2 aside h3 {
+/* Grid format */
+.singleCardContainer {
+	flex: 50%;
+	flex: 1 1 1;
+}
+
+/* Labels on each image (next 2) */
+label {
+	position: relative;
+	bottom: 50%;
+	z-index: 1;
 	display: flex;
 	background-color: var(--light);
 	color: var(--darker);
 	font-weight: bolder;
 	font-size: 130%;
-	position: relative;
-	top: 350px;
-	width: 170px;
+	max-width: 250px;
 	height: 60px;
 	padding-left: 1%;
-	z-index: 1;
+	flex: 1 1 1;
 }
 
-.card2 aside p {
+label p {
 	display: flex;
 	color: var(--darker);
 	font-size: 80%;
 	position: relative;
-	top: 315px;
+	top: 40%;
 	padding-left: 1%;
 	z-index: 1;
+	flex: 1 1 1;
 }
 
-.image-cover {
-	position: relative;
-	overflow: hidden;
-}
-
-.image-cover > img {
-	object-fit: cover;
-	object-position: center;
-}
-
-.image-cover:hover {
-	box-shadow: 0px 0px 8px var(--light);
-}
-
+/* Footer format (next 3) */
 footer {
 	text-align: center;
 	padding: 3%;
@@ -268,12 +240,7 @@ footer li {
 	color: var(--dark);
 }
 
-
-.singleCardContainer {
-	flex: 50%;
-}
-
-
+/* Media Queries on how the website should change viewing aspect depending on the size of the scree*/
 @media screen and (max-width: 992px) {
 
 	header {
@@ -323,28 +290,10 @@ footer li {
 		width: 100%;
 	}
 
-	.card1 aside h3 {
-		display: flex;
-		background-color: var(--light);
-		color: var(--darker);
-		font-weight: bolder;
-		font-size: 130%;
-		position: relative;
-		top: 600px;
-		width: 170px;
-		height: 60px;
-		padding-left: 1%;
-		z-index: 1;
-	}
-	
-	.card1 aside p {
-		display: flex;
-		color: var(--darker);
-		font-size: 80%;
-		position: relative;
-		top: 565px;
-		padding-left: 1%;
-		z-index: 1;
+	.singleCardContainer {
+		flex-direction: column;
+		flex: 100%;
+		width: 100%;
 	}
 	
 } 
