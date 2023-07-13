@@ -17,6 +17,11 @@ body {
 	line-height: 1.5;
 }
 
+main {
+	display: flex;
+	flex-wrap: wrap;
+}
+
 header {
 	padding: 1% 0 1% 0;
 	background-color: var(--dark);
@@ -24,16 +29,18 @@ header {
 	height: 125px;
 	font-size: 40px;
 	font-weight: bolder;
+	flex: 1 1 1;
 }
 
 header h1 {
 	padding: 1%;
-	font-size: 115%;
+	font-size: 110%;
 	background-color: var(--light);
 	color: var(--darker);
 	width: 500px;
 	height: 100px;
 	text-align: right;
+	flex: 1 1 1;
 }
 
 nav {
@@ -41,6 +48,7 @@ nav {
 	display: flex;
 	justify-content: end;
 	align-items: center;
+	flex: 1 1 1;
 }
 
 nav ul {
@@ -73,12 +81,14 @@ a:hover {
 	width: 30%;
 	text-align: right;
 	font-weight: bolder;
+	flex: 1 1 1;
 }
 
 /* Start of Main Sections Content Styling */
 .titles {
     display: flex;
     padding: 0% 0% 0% 5%;
+	flex: 1 1 1;
 }
 
 /* "About Me", "Work" and "Contact Me" Sections Titles' Styling */
@@ -95,8 +105,6 @@ a:hover {
 
 /* "About Me" and "Contact Me" Section Contents' Styling */
 .flex-row {
-    display: flex;
-    flex-wrap: wrap;
     align-items: center;
     width: 80%;
 	border-left: var(--green) solid 4px;
@@ -113,24 +121,33 @@ a:hover {
 	justify-content: space-between;
 	margin-bottom: 5%;
 	padding-left: 2%;
-	width: 200%;
+	width: 100%;
 	text-align: center;
 	padding-right: 3%;
 }
 
 .card1 {
-	width: 100%;
+	flex: 1 1 1;
 	margin-right: 1%;
 }
 
 .card1 img {
-	width: 100%;
 	border: solid var(--light) 5px;
 	margin-bottom: 5px;
+	max-width: 105%;
+	-webkit-transform: scale(1);
+	transform: scale(1);
+	-webkit-transition: .1s ease-in-out;
+	transition: .1s ease-in-out;
+	opacity: 0.8;
 }
 
 .card1 img:hover {
-	box-shadow: 0px 0px 8px var(--light);
+	box-shadow: 0px 0px 15px var(--light);
+	-webkit-transform: scale(1.005);
+	transform: scale(1.005);
+	opacity: 1;
+	cursor: grab;
 }
 
 .card1 aside h3 {
@@ -144,6 +161,7 @@ a:hover {
 	width: 170px;
 	height: 60px;
 	padding-left: 1%;
+	z-index: 1;
 }
 
 .card1 aside p {
@@ -153,21 +171,32 @@ a:hover {
 	position: relative;
 	top: 565px;
 	padding-left: 1%;
+	z-index: 1;
 }
 
 .card2 {
-	width: 100%;
+	flex: 1 1 1;
+	margin-right: 1%;
 }
 
 .card2 img {
-	display: flex;
-	width: 50%;
 	max-height: 366px;
-	border: solid var(--light) 5px;					
+	border: solid var(--light) 5px;
+	max-width: 100%;
+	-webkit-transform: scale(1);
+	transform: scale(1);
+	-webkit-transition: .1s ease-in-out;
+	transition: .1s ease-in-out;
+	opacity: 0.8;
+	display: block;
 }
 
 .card2 img:hover {
-	box-shadow: 0px 0px 8px var(--light);
+	box-shadow: 0px 0px 15px var(--light);
+	-webkit-transform: scale(1.005);
+	transform: scale(1.005);
+	opacity: 1;
+	cursor: grab;
 }
 
 .card2 aside h3 {
@@ -181,6 +210,7 @@ a:hover {
 	width: 170px;
 	height: 60px;
 	padding-left: 1%;
+	z-index: 1;
 }
 
 .card2 aside p {
@@ -190,6 +220,7 @@ a:hover {
 	position: relative;
 	top: 315px;
 	padding-left: 1%;
+	z-index: 1;
 }
 
 .image-cover {
@@ -228,7 +259,7 @@ footer li {
 
 
 /* media query for larger screens */
-@media screen and (min-width: 992px) {
+/* @media screen and (min-width: 992px) {
 	.header {
 		width: 100%;
 	}
@@ -249,16 +280,18 @@ footer li {
 /* using a mobile-first approach, use `min-width` values going from narrow -> wide for a responsive design */
 @media screen and (min-width: 768px) {
 	/* on tablets, set columns to only be 50% of the width and not grow */
+	main,
+	nav,
+	.titles {
+		flex-direction: column;
+	}
+
 	.card2 {
 	  width: 100%;
 	}
-	
-	/* select the last child to grow to full width if it has space to grow */
-	.nav ul {
-		display: block;
-	}
+
   	
-	/*body {
+	body {
 		background-color: pink;
-	}*/
-}
+	}
+} */
