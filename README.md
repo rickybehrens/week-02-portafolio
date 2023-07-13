@@ -22,5 +22,5 @@ Here is a list of the funtions I've added to the site:
 
 
 
-Link to deployed application:
+##Link to deployed application:##
 https://rickybehrens.github.io/week-02-portafolio/
