@@ -17,11 +17,13 @@ body {
 	line-height: 1.5;
 }
 
+/* Main style defining flex-box*/
 main {
 	display: flex;
 	flex-wrap: wrap;
 }
 
+/* Header style */
 header {
 	padding: 1% 0 1% 0;
 	background-color: var(--dark);
@@ -32,6 +34,7 @@ header {
 	flex: 1 1 1;
 }
 
+/* My name's size and style */
 header h1 {
 	padding: 1%;
 	font-size: 110%;
@@ -43,6 +46,7 @@ header h1 {
 	flex: 1 1 1;
 }
 
+/* Nav sizing and general text aligment */
 nav {
 	width: 80%;
 	display: flex;
@@ -51,34 +55,40 @@ nav {
 	flex: 1 1 1;
 }
 
+/* Nav link style */
 nav ul {
 	display: inline-flex;
 	justify-content: space-between;
-	font-size: 60%;
+	font-size: 50%;
 	padding-right: 2%;
 	width: 80%;
+	flex: 1 1 1;
 }
 
+/* Link style */
 a {
 	color: var(--light);
 	text-decoration: underline 5px var(--light);
 	justify-content: end;
+	flex: 1 1 1;
 }
 
+/* Style when you hover on any link */
 a:hover {
 	color: orange;
 	text-decoration: underline 5px orange;
 }
 
+/* Cool Slogan style */
 .motto {
 	position: absolute;
 	right: 0px;
 	top: 220px;
 	padding: 1%;
-	font-size: 200%;
+	font-size: 150%;
 	background-color: var(--light);
 	color: var(--darker);
-	width: 30%;
+	width: 40%;
 	text-align: right;
 	font-weight: bolder;
 	flex: 1 1 1;
@@ -175,8 +185,11 @@ a:hover {
 }
 
 .card2 {
-	flex: 1 1 1;
-	margin-right: 1%;
+
+	display: flex;
+    flex-wrap: wrap;
+	/* flex: 1 1 1;
+	margin-right: 1%; */
 }
 
 .card2 img {
@@ -256,42 +269,82 @@ footer li {
 }
 
 
-
-
-/* media query for larger screens */
-/* @media screen and (min-width: 992px) {
-	.header {
-		width: 100%;
-	}
-
-	.nav ul {
-		display: block;
-	}
-	
-	.card2 {
-		width: 100%;
-	}
-	
-	/*body {
-		background: #8ac4ff;
-	  }*/
+.singleCardContainer {
+	flex: 50%;
 }
 
-/* using a mobile-first approach, use `min-width` values going from narrow -> wide for a responsive design */
-@media screen and (min-width: 768px) {
-	/* on tablets, set columns to only be 50% of the width and not grow */
-	main,
-	nav,
+
+@media screen and (max-width: 992px) {
+
+	header {
+		flex-direction: column;
+		padding: 0%;
+	}
+
+	header h1 {
+		width: 100%;
+		text-align: center;
+		padding: 0%;
+	}
+
+	nav {
+		padding: 1% 0% 1% 0%;
+		width: 100%;
+	}
+
+	nav ul {
+		display: flex;
+		padding: 0%;
+		width: 100%;
+		justify-content: space-around;
+	}
+
 	.titles {
 		flex-direction: column;
+		width: 100%;
+	}
+	
+	.titles h2 {
+		width: 100%;
+		display: flex;
+		align-content: center;
+		margin: 2% 5% 0% 0%;
+		justify-content: flex-start;
+	}
+	
+	.flex-row {
+		flex-direction: column;
+		width: 100%;
+		border-top: 4px var(--green) solid;
+		border-left: 0px;
 	}
 
-	.card2 {
-	  width: 100%;
+	.flex-row p {
+		width: 100%;
 	}
 
-  	
-	body {
-		background-color: pink;
+	.card1 aside h3 {
+		display: flex;
+		background-color: var(--light);
+		color: var(--darker);
+		font-weight: bolder;
+		font-size: 130%;
+		position: relative;
+		top: 600px;
+		width: 170px;
+		height: 60px;
+		padding-left: 1%;
+		z-index: 1;
 	}
-} */
+	
+	.card1 aside p {
+		display: flex;
+		color: var(--darker);
+		font-size: 80%;
+		position: relative;
+		top: 565px;
+		padding-left: 1%;
+		z-index: 1;
+	}
+	
+} 
